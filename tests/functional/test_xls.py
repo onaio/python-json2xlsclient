@@ -1,9 +1,11 @@
+import json2xlsclient import client 
 import testtools
 
 
 class TestFunctionalXLS(testtools.TestCase):
 
     def test_generate_xls(self):
+        j2x = Client
         pass
 
     def test_get_generated_xls(self):
@@ -13,7 +15,8 @@ class TestFunctionalXLS(testtools.TestCase):
         pass
 
     def setUp(self):
+        super(TestFunctionalXLS, self).setUp()
         pass
 
     def tearDown(self):
-        pass
+        super(TestFunctionalXLS, self).tearDown()
