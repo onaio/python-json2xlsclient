@@ -1,7 +1,7 @@
 from json2xlsclient.exceptions import ClientException
 
 
-class Templates(object):
+class Template(object):
 
     def __init__(self, conn=None):
         if not conn:
