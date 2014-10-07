@@ -1,12 +1,10 @@
+import httpretty
+from json2xlsclient.client import Client
+from unittest import TestCase
 import os
 
-import httpretty
-import testtools
 
-from json2xlsclient.client import Client
-
-
-class TestFunctionalXLS(testtools.TestCase):
+class TestFunctionalXLS(TestCase):
 
     @httpretty.activate
     def test_generate_xls(self):

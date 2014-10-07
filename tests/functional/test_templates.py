@@ -1,9 +1,7 @@
-import os
-
-from testtools import TestCase
 import httpretty
-
 from json2xlsclient.client import Client
+import os
+from unittest import TestCase
 
 
 class TestTemplates(TestCase):
