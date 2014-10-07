@@ -5,4 +5,4 @@ install:
   - "pip install flake8"
   - "pip install ."
   - "pip install -r dev-requirements.txt"
-script: "nosetests tests --with-doctest"
+script: "nosetests tests --with-doctest --with-coverage"
