@@ -3,6 +3,7 @@ from json2xlsclient.exceptions import ClientException
 from json2xlsclient.exceptions import ApiException
 import json
 import mock
+import os
 import unittest
 
 
@@ -60,7 +61,7 @@ class HTTPMethodsTestCase(unittest.TestCase):
                 self.conn.request('PUT', self.path)
 
     def test_upload(self):
-        ffname = u'tests/fixtures/school-example.xls'
+        ffname = os.path.abspath(u'tests/fixtures/school-example.xls')
         with mock.patch.object(self.conn, '_request',
                                return_value=MockResponse(200)):
             with self.assertRaises(ClientException):
@@ -74,7 +75,7 @@ class HTTPMethodsTestCase(unittest.TestCase):
                                             headers=self.ua_header, data=None)
 
     def try_upload(self, call, method):
-        ffname = u'tests/fixtures/school-example.xls'
+        ffname = os.path.abspath(u'tests/fixtures/school-example.xls')
         handle = open(ffname, 'rb')
         data = handle.read()
         handle.close()
