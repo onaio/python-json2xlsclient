@@ -1,3 +1,5 @@
+[![python-json2xlsclient travis](https://secure.travis-ci.org/onaio/python-json2xlsclient.png?branch=master)](http://travis-ci.org/onaio/python-json2xlsclient)
+
 Python bindings to the [json-to-xls][1] API
 =====================
 This repo contains the sources for the json-to-xls API. The json-to-xls 
