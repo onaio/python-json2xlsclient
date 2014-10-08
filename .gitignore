@@ -55,5 +55,6 @@ target/
 
 # Custom
 .idea
-.swp
-.swo
+*.swp
+*.swo
+.project
