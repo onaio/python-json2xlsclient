@@ -1,0 +1,6 @@
+image: onaio/python:2.7
+script:
+    - pip install flake8
+    - pip install .
+    - pip install -r dev-requirements.txt
+    - nosetests tests --with-doctest --with-coverage
