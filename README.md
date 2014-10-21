@@ -7,8 +7,10 @@ service generates XLS files from XLS templates given valid JSON datasets.
 You can read more about that [here][1]
 
 ####Installation:-
-`pip install requests`  
-`pip install -e git://github.com/onaio/python-json2xlsclient.git@consolidated#egg=j2xclient`
+`pip install git+https://github.com/onaio/python-json2xlsclient.git`  
+OR as a [pip editable](http://pip.readthedocs.org/en/latest/reference/pip_install.html#editable-installs) if you'd like to develop this in parallel with your project:-  
+`pip install -e git://github.com/onaio/python-json2xlsclient.git#egg=j2xclient`  
+
 
 ####Sample Usage
 ***Initialization:-***  
