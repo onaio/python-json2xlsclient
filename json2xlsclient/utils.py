@@ -16,6 +16,7 @@ class Connection(object):
         self.session = requests.Session()
 
         self.user_agent = user_agent or "python-json2xlsclient"
+        self.last_response = None
 
     def _request(self, *args, **kwargs):
         return self.session.request(*args, **kwargs)
@@ -36,7 +37,7 @@ class Connection(object):
         status_code = self.last_response.status_code
 
         if status_code < 200 or status_code >= 300:
-            raise ApiException(None, self.last_response)
+            raise ApiException(self.last_response)
 
         return self.last_response
 
