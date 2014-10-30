@@ -14,7 +14,7 @@ class Template(object):
         payload = template_file.read() if template_file else None
 
         return self.conn.post(
-            u'/templates/', file_path=template_path, payload=payload).text
+            u'/templates/', template_path, payload).text
 
     def get(self, template_token):
         """ Downloads a template for a given token
