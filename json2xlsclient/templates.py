@@ -4,14 +4,17 @@ class Template(object):
     def __init__(self, conn):
         self.conn = conn
 
-    def create(self, template_path):
+    def create(self, template_path=None, template_file=None):
         """ Creates a template used to generate xls files.
 
         :param template_path: Path to the template file to upload.
+        :param template_file: File object of the file to be uploaded.
         :returns: string -- a token corresponding to the newly created template
         """
+        payload = template_file.read() if template_file else None
+
         return self.conn.post(
-            u'/templates/', template_path).text
+            u'/templates/', file_path=template_path, payload=payload).text
 
     def get(self, template_token):
         """ Downloads a template for a given token

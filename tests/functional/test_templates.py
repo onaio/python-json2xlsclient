@@ -63,3 +63,21 @@ class TestTemplates(TestCase):
 
             status_code = self.client.template.conn.last_response.status_code
             self.assertEquals(status_code, 200)
+
+        @httpretty.activate
+        def test_create_template_file_object(self):
+            body = '/xls/{}'.format(self.expected_xls_token)
+            end_point = self.server_url + '/templates/'
+            httpretty.register_uri(httpretty.POST,
+                                   end_point,
+                                   body=body,
+                                   status=201)
+
+            fo = open(self.template_path, "rb")
+            self.client.template.create(template_file=fo)
+            status_code = self.client.template.conn.last_response.status_code
+            self.assertEquals(status_code, 201)
+
+            expected_response = '/xls/{}'.format(self.expected_xls_token)
+            self.assertEquals(self.client.template.conn.last_response.content,
+                              expected_response)
