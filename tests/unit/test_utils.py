@@ -1,10 +1,11 @@
-from json2xlsclient.utils import Connection
-from json2xlsclient.exceptions import ClientException
-from json2xlsclient.exceptions import ApiException
 import json
-import mock
 import os
 import unittest
+
+import mock
+
+from json2xlsclient.exceptions import ApiException, ClientException
+from json2xlsclient.utils import Connection
 
 
 class MockResponse(object):
