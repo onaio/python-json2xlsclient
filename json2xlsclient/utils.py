@@ -1,7 +1,7 @@
-from json2xlsclient.exceptions import ApiException
-from json2xlsclient.exceptions import ClientException
 import requests
 from future.moves.urllib.parse import urlparse
+
+from json2xlsclient.exceptions import ApiException, ClientException
 
 
 class Connection(object):
