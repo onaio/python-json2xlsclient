@@ -20,6 +20,7 @@ class TestFunctionalXLS(TestCase):
         self.assertEquals(self.client.xls.conn.last_response.status_code,
                           201)
         expected_response = '/xls/{}'.format(self.expected_xls_token)
+        expected_response = expected_response.encode('utf-8')
 
         self.assertEquals(self.client.xls.conn.last_response.content,
                           expected_response)
