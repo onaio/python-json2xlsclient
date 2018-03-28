@@ -1,4 +1,9 @@
-class Xls():
+from __future__ import unicode_literals
+
+from builtins import object
+
+
+class Xls(object):
     """ Class used to manage xls related functions. """
 
     def __init__(self, conn):
@@ -12,7 +17,7 @@ class Xls():
         :returns: string -- a token corresponding to the generated xls file.
         """
         return self.conn.post(
-            u'/xls/{}'.format(template_token), None, json_data).text
+            '/xls/{}'.format(template_token), None, json_data).text
 
     def get(self, xls_token):
         """ Get an Excel file generated after a previous call to `create()`
@@ -22,7 +27,7 @@ class Xls():
         file escaped in a mix of \\xhh notation & regular escape sequences.
         """
         return self.conn.get(
-            u'/xls/{}'.format(xls_token), None).text
+            '/xls/{}'.format(xls_token), None).text
 
 # TODO(james): uncomment when `PUT /xls/` gets fixed (see onaio/json-to-xls#3)
 #     def update(self, xls_token, json_data):

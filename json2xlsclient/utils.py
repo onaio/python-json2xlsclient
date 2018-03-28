@@ -1,3 +1,7 @@
+from __future__ import unicode_literals
+
+from builtins import object
+
 import requests
 from future.moves.urllib.parse import urlparse
 
@@ -11,7 +15,7 @@ class Connection(object):
 
         if self.url.scheme not in ['http', 'https']:
             raise ClientException(
-                u'{} protocol is not supported'.format(self.url.scheme))
+                '{} protocol is not supported'.format(self.url.scheme))
 
         self.session = requests.Session()
 
@@ -26,11 +30,11 @@ class Connection(object):
         headers['user-agent'] = self.user_agent
 
         if not path.startswith('/'):
-            path = u'/{}'.format(path)
+            path = '/{}'.format(path)
 
         self.last_response = self._request(
             method,
-            u'{}://{}{}'.format(
+            '{}://{}{}'.format(
                 self.url.scheme, self.url.netloc, path),
             headers=headers, data=data, files=files)
 

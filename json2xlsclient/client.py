@@ -1,3 +1,5 @@
+from builtins import object
+
 from json2xlsclient.templates import Template
 from json2xlsclient.utils import Connection
 from json2xlsclient.xls import Xls

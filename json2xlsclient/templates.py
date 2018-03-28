@@ -1,3 +1,8 @@
+from __future__ import unicode_literals
+
+from builtins import object
+
+
 class Template(object):
     """ Class used to "contain" template related functions. """
 
@@ -14,7 +19,7 @@ class Template(object):
         payload = template_file.read() if template_file else None
 
         return self.conn.post(
-            u'/templates/', template_path, payload).text
+            '/templates/', template_path, payload).text
 
     def get(self, template_token):
         """ Downloads a template for a given token
@@ -24,7 +29,7 @@ class Template(object):
         template data escaped in a mix of \\xhh notation and escape sequences.
         """
         return self.conn.get(
-            u'/templates/{}'.format(template_token)).text
+            '/templates/{}'.format(template_token)).text
 
     def update(self, template_token, template_path):
         """ Update exsisting template from a given token
@@ -34,4 +39,4 @@ class Template(object):
         :returns: string -- a token corresponding to the updated template.
         """
         return self.conn.put(
-            u'/templates/{}'.format(template_token), template_path).text
+            '/templates/{}'.format(template_token), template_path).text
