@@ -31,6 +31,7 @@ class TestTemplates(TestCase):
             self.assertEquals(status_code, 201)
 
             expected_response = '/xls/{}'.format(self.expected_xls_token)
+            expected_response = expected_response.encode('utf-8')
             self.assertEquals(self.client.template.conn.last_response.content,
                               expected_response)
 
@@ -50,6 +51,7 @@ class TestTemplates(TestCase):
             self.assertEquals(status_code, 201)
 
             expected_response = '/xls/{}'.format(self.expected_xls_token)
+            expected_response = expected_response.encode('utf-8')
 
             status_content = self.client.template.conn.last_response.content
             self.assertEquals(status_content, expected_response)
@@ -81,5 +83,6 @@ class TestTemplates(TestCase):
             self.assertEquals(status_code, 201)
 
             expected_response = '/xls/{}'.format(self.expected_xls_token)
+            expected_response = expected_response.encode('utf-8')
             self.assertEquals(self.client.template.conn.last_response.content,
                               expected_response)

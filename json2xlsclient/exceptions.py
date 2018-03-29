@@ -1,3 +1,8 @@
+from __future__ import unicode_literals
+
+from builtins import object
+
+
 class ExceptionMixin(object):
     """ Mixin containing common exception functionality. """
 
@@ -5,7 +10,7 @@ class ExceptionMixin(object):
         self.msg = msg
         if resp is not None:
             self.api_response = resp
-            self.msg = u'Api Error: {}, {}'.format(
+            self.msg = 'Api Error: {}, {}'.format(
                 self.api_response.status_code, self.api_response.reason)
         self.api_response = resp
         Exception.__init__(self, msg)
